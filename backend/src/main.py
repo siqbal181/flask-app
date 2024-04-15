@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, g
 from src.routes.budget_routes import budget_routes
 from src.database import get_db
 
