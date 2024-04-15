@@ -3,6 +3,7 @@ from src.routes.budget_routes import budget_routes
 from src.database import get_db
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 app.config['DATABASE'] = 'budget.db'
 
 # Create SQLite database and table
@@ -23,7 +24,13 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
+# Route for homepage
+@app.route('/')
+def home():
+    return "<p>Hello</p>"
+
 app.register_blueprint(budget_routes)
 
 if __name__ == '__main__':
-  app.run(debug=True)
+    create_table()  # Create the table when the app starts
+    app.run()
