@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from src.database import get_db
+from database import get_db
 
 budget_routes = Blueprint('budget_routes', __name__)
 

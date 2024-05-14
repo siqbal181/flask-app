@@ -1,6 +1,6 @@
 from flask import Flask, g
-from src.routes.budget_routes import budget_routes
-from src.database import get_db
+from routes.budget_routes import budget_routes
+from database import get_db
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
